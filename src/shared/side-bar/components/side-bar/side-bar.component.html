@@ -1,0 +1,29 @@
+<div class="container-fluid side-bar-frame">
+    <div class="row">
+        <div [ngClass]="{'click-disabled': isLoading}" class="col-12 text-center">
+            <a [routerLink]="'/dashboard/user-list'" class="menu-section" routerLinkActive="active">
+                <i class=" fa-solid fa-user-group"></i>
+                <span class="title">User List</span>
+            </a>
+        </div>
+        <div [ngClass]="{'click-disabled': isLoading}" class="col-12 text-center">
+            <a routerLink="/dashboard/to-do-list" class="menu-section" routerLinkActive="active">
+                <i class="fa-solid fa-list-check"></i>
+                <span class="title">To Do List</span>
+            </a>
+        </div>
+        <div [ngClass]="{'click-disabled': isLoading}" class="col-12 text-center">
+            <a routerLink="/dashboard/access" class="menu-section" routerLinkActive="active">
+                <i class="fa-solid fa-eye-low-vision"></i>
+                <span class="title">User Page Access</span>
+            </a>
+        </div>
+
+        <div [ngClass]="{'click-disabled': isLoading}" class="col-12 text-center logout-section">
+            <a class="menu-section menu-section-logout" routerLinkActive="active" (click)="onLogoutClick()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="title">Log Out</span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+:host {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #565656 !important;
+    font-size: 12px !important;
+}
+
+table.mat-table {
+    width: 100%;
+    box-shadow: unset !important;
+}
+
+.wrapper {
+    height: 100%;
+    display: block;
+}
+
+th {
+    // width: calc(25% - 25px - 28px);
+
+    th:last-child {
+        text-align-last: right;
+    }
+}
+
+td {
+    width: calc(25% - 25px - 28px);
+}
+
+th:last-child {
+    text-align-last: right;
+    width: 28px !important;
+}
+
+td:last-child {
+    text-align: right;
+    width: 28px !important;
+}
+
+th:first-child {
+    width: 100px !important;
+}
+
+td:first-child {
+    width: 100px !important;
+}
+
+.mat-row.cdk-row.ng-star-inserted:hover {
+    background: whitesmoke;
+}

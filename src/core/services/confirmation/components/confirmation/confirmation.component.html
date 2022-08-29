@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col">
+        <div class="row mb-3">
+            <div class="col">
+                <span style="font-size: 16px;">Do you want to continue this process?</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button mat-raised-button color="primary" (click)="onClick(false)">
+                    <span><i style="margin-right: .5rem;" class="fa-solid fa-xmark"></i> No</span>
+                </button>
+                <button style="margin-left: .5rem;" mat-raised-button color="primary" (click)="onClick(true)">
+                    <span><i style="margin-right: .5rem;" class="fa-solid fa-check"></i> Yes</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

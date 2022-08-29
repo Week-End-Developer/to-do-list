@@ -1,0 +1,50 @@
+.side-bar-frame {
+    width: 8rem;
+    height: 100%;
+    background-color: white;
+    border: 1px solid #d9e0ff;
+    border-radius: 12px;
+    padding: 10px;
+    position: relative;
+}
+
+.menu-section {
+    display: grid;
+    height: 6rem;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.menu-section:hover {
+    color: #5a77ff;
+}
+
+.fa-solid {
+    margin-bottom: .5rem;
+    transform: scale(1.2);
+}
+
+.title {
+    font-size: 12px;
+}
+
+.active {
+    color: #5a77ff;
+}
+
+a {
+    color: initial;
+    text-decoration: unset !important;
+}
+
+.logout-section {
+    position: absolute;
+    bottom: 0;
+}
+
+.menu-section-logout:hover {
+    color: #ff655a !important;
+}

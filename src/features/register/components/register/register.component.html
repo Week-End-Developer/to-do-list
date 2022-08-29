@@ -1,0 +1,107 @@
+<div class="container register-box-frame">
+    <div class="row">
+        <div class="col-8">
+            <div class="col-12">
+                To Do List
+            </div>
+            <div class="col-12">
+                <h1>Create your To Do List Account</h1>
+            </div>
+        </div>
+        <div class="col-4 bg-image">
+
+        </div>
+    </div>
+    <form class="form" #form="ngForm" [ngClass]="{'click-disabled': isLoading}">
+        <div class="row" style="padding-top: 24px;">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input [(ngModel)]="model.name" autocomplete="off" name="name" [required]="true" matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Surname</mat-label>
+                            <input [(ngModel)]="model.surname" autocomplete="off" name="surname" [required]="true"
+                                matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col -6">
+                        <mat-form-field appearance="outline" [ngClass]="{'mb-3': error}"
+                            [class.mat-form-field-invalid]="error">
+                            <mat-label>E-Mail</mat-label>
+                            <input [(ngModel)]="model.email"
+                                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" autocomplete="off"
+                                name="mail" [required]="true" matInput type="email">
+                            <mat-hint class="text-danger" *ngIf="error">{{error}}</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Select Role</mat-label>
+                            <mat-select [(ngModel)]="model.userType" name="select-role" id="select-role"
+                                [required]="true">
+                                <mat-option [value]="1">Super Admin</mat-option>
+                                <mat-option [value]="2">Admin</mat-option>
+                                <mat-option [value]="3">User</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input [(ngModel)]="model.password" autocomplete="new-password" name="new-password"
+                                [type]="isPasswordVisible ? 'text' : 'password'" [required]="true" matInput
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <mat-error>test</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Confirm</mat-label>
+                            <input [(ngModel)]="passwordConfirm" autocomplete="new-password" name="password-confirm"
+                                [type]="isPasswordVisible ? 'text' : 'password'" [required]="true" matInput>
+                        </mat-form-field>
+                    </div>
+                    <mat-hint>Must contain at least one number and one uppercase and lowercase letter, and at least 8 or
+                        more characters</mat-hint>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-checkbox class="example-margin" name="check" [(ngModel)]="isPasswordVisible"
+                            [required]="false">Show password
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="bottom-section">
+
+        <div class="row flex-center-vertical ">
+            <div class="col-6">
+                <button mat-button color="primary" (click)="onSigninClick()">Sign in instead</button>
+            </div>
+            <div class="col-6" style="text-align: right;">
+                <button *ngIf="!isLoading" mat-raised-button color="primary" [disabled]="!form.valid"
+                    (click)="onNextClick()">Next</button>
+
+                <div *ngIf="isLoading" class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

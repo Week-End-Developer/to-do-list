@@ -1,0 +1,17 @@
+:host {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+.menu-section-logout {
+    cursor: pointer;
+}
+
+.menu-section-logout:hover {
+    color: #ff655a !important;
+}
